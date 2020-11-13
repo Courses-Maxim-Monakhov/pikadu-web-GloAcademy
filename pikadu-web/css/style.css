@@ -95,8 +95,15 @@ body {
   justify-content: space-between;
 }
 .posts {
+  display: none;
   width: 67%;
+  margin-right: 20px;
 }
+
+.posts.visible {
+  display: block;
+}
+
 .post {
   background-color: #fff;
   border: 1px solid #e8e8e8;
@@ -123,14 +130,20 @@ body {
 }
 .tags {
   margin-bottom: 22px;
+  color: #bfbfbf;
 }
 .tag {
   color: #bfbfbf;
   font-size: 14px;
   line-height: 22px;
-  margin-right: 10px;
+  margin-left: 10px;
   text-decoration: none;
 }
+
+.tag:first-child {
+  margin-left: 0;
+}
+
 .post-footer {
   border-top: 1px solid #e8e8e8;
   background: #fafafa;
@@ -281,6 +294,7 @@ body {
 .user-avatar {
   border-radius: 50%;
   margin-right: 17px;
+  /* object-fit: cover; */
 }
 .user-name {
   font-weight: 600;
@@ -406,6 +420,11 @@ body {
   width: 100%;
   margin-top: 20px;
 }
+
+.button-new-post.visible {
+  display: flex;
+}
+
 .icon-fire {
   fill: #fff;
   width: 11px;
@@ -472,10 +491,18 @@ body {
   text-align: center;
   color: #ffffff;
 }
+
 .add-post {
-  display: flex;
+  display: none;
+  width: 67%;
   flex-direction: column;
+
 }
+
+.add-post.visible {
+  display: flex;
+}
+
 .add-title,
 .add-text {
   background: #ffffff;
@@ -539,9 +566,7 @@ body {
   .sidebar.visible {
     transform: translateX(0);
   }
-  .posts {
-    width: 100%;
-  }
+
   .header-nav {
     display: none;
   }
@@ -572,8 +597,11 @@ body {
     margin-top: 15px;
   }
   .author-avatar {
-    margin-left: 0;
-    margin-right: 10px;
+    width: 34px;
+    height: 34px;
+    margin-left: 9px;
+    border-radius: 4px;
+    object-fit: cover;
   }
   .author-about {
     order: 2;
